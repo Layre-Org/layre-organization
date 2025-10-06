@@ -8,11 +8,12 @@ local UIScope = require(ReplicatedStorage.Packages.Shared.Types.__generated.UISc
 
 export type IProps = {
 	Button: ImageButton | TextButton;
-	ActivatedAction: () -> ();
+	ActivatedAction: (() -> ())?;
 }
 
 export type IReturn = {
-	Scope: UIScope.Scope
+	Scope: UIScope.Scope;
+	IsHovering: Fusion.Value<boolean>;
 }
 
 return function(Scope: UIScope.Scope, Props: IProps): IReturn
@@ -21,13 +22,24 @@ return function(Scope: UIScope.Scope, Props: IProps): IReturn
 	local Button, ActivatedAction = table.destruct(Props, { 'Button', 'ActivatedAction' })
 	
 	assert(Button, 'Missing prop "Button"')
-	assert(ActivatedAction, 'Missing prop "ActivatedAction"')
 	
-	Props[Scope.OnEvent 'Activated'] = ActivatedAction
+	-- out props requires same scope
+	local IsHovering = Scope:Value(false)
+	
+	if ActivatedAction then
+		Props[Scope.OnEvent 'Activated'] = ActivatedAction
+	end
+	Props[Scope.OnEvent 'MouseEnter'] = function()
+		IsHovering:set(true)
+	end
+	Props[Scope.OnEvent 'MouseLeave'] = function()
+		IsHovering:set(false)
+	end
 
 	InnerScope:Hydrate(Button)(Props)
 	
 	return Button, {
 		Scope = InnerScope;
+		IsHovering = IsHovering
 	}
 end
