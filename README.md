@@ -7,7 +7,8 @@ Nesse readme você consegue consultar cada tópico que a org aborda, cada índic
 ---
 
 ## 📦 Instalação
-Tudo gira em torno do [Plugin](https://github.com/Layre-Org/layre-organization/Docs/Plugin), é com ele que você vai injetar e utilizar a org.
+
+Tudo gira em torno do [Plugin](https://github.com/Layre-Org/layre-organization/blob/main/Docs/Plugin.md), é com ele que você vai injetar e utilizar a org.
 
 Você até pode usar e instalar manualmente os `.rbxm` disponibilizados, mas fica completamente por sua conta e risco, e **não é nada recomendável** que faça isso.
 
@@ -32,18 +33,16 @@ Você até pode usar e instalar manualmente os `.rbxm` disponibilizados, mas fic
 
 ### Plugin
 
--   [Como usar o Plugin](https://github.com/Layre-Org/layre-organization/Docs/Plugin)
+-   [Como usar o Plugin](https://github.com/Layre-Org/layre-organization/blob/main/Docs/Plugin.md)
 
 ### Padrões de Projeto
 
--   [Managers](https://github.com/Layre-Org/layre-organization/Docs/Managers)
--   [Controllers](https://github.com/Layre-Org/layre-organization/Docs/Controllers)
--   [UIControllers](https://github.com/Layre-Org/layre-organization/Docs/UIControllers)
--   [Components](https://github.com/Layre-Org/layre-organization/Docs/Components)
--   [UIComponents](https://github.com/Layre-Org/layre-organization/Docs/UIComponents)
--   [Handlers](https://github.com/Layre-Org/layre-organization/Docs/Handlers)
--   [Classes](https://github.com/Layre-Org/layre-organization/Docs/Classes)
--   [Stores](https://github.com/Layre-Org/layre-organization/Docs/Stores)
+-   [Managers](https://github.com/Layre-Org/layre-organization/blob/main/Docs/Managers.md)
+-   [Controllers](https://github.com/Layre-Org/layre-organization/blob/main/Docs/Controllers.md)
+-   [Components](https://github.com/Layre-Org/layre-organization/blob/main/Docs/Components.md)
+-   [Handlers](https://github.com/Layre-Org/layre-organization/blob/main/Docs/Handlers.md)
+-   [Classes](https://github.com/Layre-Org/layre-organization/blob/main/Docs/Classes.md)
+-   [Stores](https://github.com/Layre-Org/layre-organization/blob/main/Docs/Stores.md)
 
 ### Ferramentas Exclusivas (diretamente integradas)
 
@@ -61,4 +60,4 @@ Você até pode usar e instalar manualmente os `.rbxm` disponibilizados, mas fic
 
 Antes de solicitar um Issue ou PR (Pull Request) é de extrema importância entender sobre o [SemVer](https://semver.org/lang/pt-BR/) (Versionamento Semântico) e estar ciente das últimas versões publicadas em [Releases](https://github.com/Layre-Org/layre-organization/releases).
 
--   Veja [como contribuir com a Org](https://github.com/Layre-Org/layre-organization/Docs/PRsAndContribution)
+-   Veja [como contribuir com a Org](https://github.com/Layre-Org/layre-organization/blob/main/Docs/PRsAndContribution.md)
