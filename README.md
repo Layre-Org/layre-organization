@@ -2,15 +2,18 @@
 
 Podemos considerar a org uma Framework exlusiva, com um amontoado de features que misturam Atalhos, Snippets, Padrões de Projeto e entre muitas outras funcionalidades, onde o principal objetivo é contornar o principal vilão do Roblox Studio: **A produtividade**.
 
-> Nesse readme você consegue consultar cada tópico que a org aborda, cada índice foi separado por categoria/assunto, basta clicar e ir navegando onde te interessa.
+Nesse readme você consegue consultar cada tópico que a org aborda, cada índice foi separado por categoria/assunto, basta clicar e ir navegando onde te interessa.
 
 ---
 
 ## 📦 Instalação
-
 Tudo gira em torno do [Plugin](https://github.com/Layre-Org/layre-organization/Docs/Plugin), é com ele que você vai injetar e utilizar a org.
 
-> **Obs:** Você até pode usar e instalar manualmente os `.rbxm` disponibilizados, mas fica completamente por sua conta e risco, e **não é nada recomendável** que faça isso.
+Você até pode usar e instalar manualmente os `.rbxm` disponibilizados, mas fica completamente por sua conta e risco, e **não é nada recomendável** que faça isso.
+
+> ⚠️ **ATENÇÃO:**  
+> A instalação do plugin deve ser feita **manualmente** por enquanto.  
+> Estamos corrigindo questões no código fonte que violam as diretrizes do Roblox, portanto não conseguimos manter atualizações automáticas neste momento.
 
 **Por isso, instale o plugin apenas da seguinte forma:**
 
