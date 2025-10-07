@@ -12,17 +12,17 @@ Existe uma lista de métodos exclusivos e pensados para melhorar a produtividade
 
 ## Índice dos métodos built-in
 
--   [Métodos de Execução](#metodos-de-execucao)
--   [Métodos de Players](#metodos-de-players)
--   [Métodos de Loop](#metodos-de-loop)
+-   [Métodos de Execução](#métodos-de-execução)
+-   [Métodos de Players](#métodos-de-players)
+-   [Métodos de Loop](#métodos-de-loop)
 
 ## Outras funções built-in
 
--   [Integração nativa com Janitor](#integracao-nativa-com-janitor)
+-   [Integração nativa com Janitor](#integração-nativa-com-janitor)
 
 ### Métodos de Execução
 
-É em algum destes métodos que você vai conectar os `listeners` do [ByteNet](https://ffrostfall.github.io/ByteNet/), configurar [Classes](https://github.com/Layre-Org/layre-organization/blob/main/Docs/Classes.md) ou simplesmente configurar variáveis daquele código.
+É em algum destes métodos que você vai conectar os `listeners` do [ByteNet](https://ffrostfall.github.io/ByteNet/), configurar [Classes](https://github.com/Layre-Org/layre-organization/blob/main/Docs/Classes.md), [Components](https://github.com/Layre-Org/layre-organization/blob/main/Docs/Components.md) ou simplesmente configurar variáveis daquele código.
 
 -   `Manager:Setup()` -> Executa primeiro que tudo.
 -   `Manager:Start()` -> Executado após o Setup, é um método **padrão e o mais utilizado**.
@@ -37,7 +37,6 @@ O [Core](https://github.com/Layre-Org/layre-organization/blob/main/Template/Serv
 -   `Manager:OnPlayerAdded(Player)` -> Executado quando um Player entra no jogo.
 -   `Manager:OnPlayerRemoving(Player)` -> Executado quando um Player sai do jogo.
 -   `Manager:OnPlayerSpawn(Player, Character)` -> Executado quando o Character é spawnado, **ou seja: quando entrar e após cada respawn**.
-
 -   `Manager:OnPlayerDied(Player, Character)` -> Executado quando um Player morre.
 
 ### Métodos de Loop
