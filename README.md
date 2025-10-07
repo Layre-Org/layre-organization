@@ -19,13 +19,13 @@ Você até pode usar e instalar manualmente os `.rbxm` disponibilizados, mas fic
 **Por isso, instale o plugin apenas da seguinte forma:**
 
 1. Acesse o último release oficial na [Página de Releases](https://github.com/Layre-Org/layre-organization/releases/tag/release)
-2. Busque pela **última release estável** -> Geralmente é a primeira da lista, e estará marcada como "nova" ou "latest"
-3. Se houver instruções nesta release, é altamente recomendável a leitura
-4. Busque pelo anexo `Layre Plugin.rbxmx` e baixe-o. _(em breve novas versões do plugin serão baixadas pelo próprio Roblox Studio)_
-5. Abra o Explorador de Arquivos, vá na barra de diretórios e cole o comando: `%LOCALAPPDATA%\Roblox\Plugins`
-6. Mova o `.rbxmx` para esta pasta e re-abra seu Roblox Studio -> Verifique na aba de Plugins
+2. Busque pela **última release estável** -> Geralmente é a primeira da lista, e estará marcada como "nova" ou "latest".
+3. Se houver instruções nesta release, é altamente recomendável a leitura.
+4. Busque pelo anexo `Layre Plugin.rbxmx` e baixe-o.
+5. Abra o Explorador de Arquivos, vá na barra de diretórios e cole o comando: `%LOCALAPPDATA%\Roblox\Plugins`.
+6. Mova o `.rbxmx` para esta pasta e re-abra seu Roblox Studio -> Verifique na aba de Plugins.
 
-> ✅ Seu plugin foi instalado e você já pode iniciar seu novo projeto.
+> ✅ Seu plugin foi instalado e você já pode iniciar seu novo projeto
 
 ---
 
@@ -47,12 +47,12 @@ Você até pode usar e instalar manualmente os `.rbxm` disponibilizados, mas fic
 ### Ferramentas Exclusivas (diretamente integradas)
 
 -   [ByteNet](https://ffrostfall.github.io/ByteNet/) (adaptado e mantido por [@Gui97p](https://github.com/Gui97p))
+-   LuaO (desenvolvido por [@Gui97p](https://github.com/Gui97p) e [@YureAnjos](https://github.com/YureAnjos))
+-   Data Structures (desenvolvido por [@Gui97p](https://github.com/Gui97p))
+-   Debounce (desenvolvido por [@Gui97p](https://github.com/Gui97p))
 -   [Janitor](https://howmanysmall.github.io/Janitor/)
 -   [Promise](https://eryn.io/roblox-lua-promise/)
--   LuaO
--   Data Structures
--   Debounce
--   Super
+-   .._entre muitas outras libs_
 
 ---
 
