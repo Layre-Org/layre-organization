@@ -1,14 +1,14 @@
 # Layre Organization
 
-Podemos considerar a org uma Framework exlusiva, com um amontoado de features que misturam Atalhos, Snippets, Padrões de Projeto e entre muitas outras funcionalidades, onde o principal objetivo é contornar o principal vilão do Roblox Studio: **A produtividade**.
+Podemos considerar a org uma Framework exlusiva, com um amontoado de features que misturam [Atalhos](https://github.com/Layre-Org/layre-organization/blob/main/Docs/Plugin.md#lista-de-comandos-command-bar) (Plugin), [Snippets](https://github.com/Layre-Org/layre-organization/blob/main/Docs/Plugin.md#snipetts) (Plugin), [Padrões de Projeto](#padrões-de-projeto) e entre muitas outras funcionalidades, onde o principal objetivo é contornar o principal vilão do Roblox Studio: **A produtividade**.
 
-Nesse readme você consegue consultar cada tópico que a org aborda, cada índice foi separado por categoria/assunto, basta clicar e ir navegando onde te interessa.
+Nesse readme você consegue consultar cada tópico que **A Org** aborda, cada índice foi separado por categoria/assunto, basta clicar e ir navegando onde te interessa.
 
 ---
 
 ## 📦 Instalação
 
-Tudo gira em torno do [Plugin](https://github.com/Layre-Org/layre-organization/blob/main/Docs/Plugin.md), é com ele que você vai injetar e utilizar a org.
+Tudo gira em torno do [Plugin](https://github.com/Layre-Org/layre-organization/blob/main/Docs/Plugin.md), é com ele que você vai injetar e utilizar A Org.
 
 Você até pode usar e instalar manualmente os `.rbxm` disponibilizados, mas fica completamente por sua conta e risco, e **não é nada recomendável** que faça isso.
 
@@ -50,8 +50,10 @@ Você até pode usar e instalar manualmente os `.rbxm` disponibilizados, mas fic
 -   LuaO (desenvolvido por [@Gui97p](https://github.com/Gui97p) e [@YureAnjos](https://github.com/YureAnjos))
 -   Data Structures (desenvolvido por [@Gui97p](https://github.com/Gui97p))
 -   Debounce (desenvolvido por [@Gui97p](https://github.com/Gui97p))
+-   [Super](https://github.com/Layre-Org/layre-organization/blob/main/Docs/Classes.md#herança-com-a-lib-super) (desenvolvido por [@Gui97p](https://github.com/Gui97p))
 -   [Janitor](https://howmanysmall.github.io/Janitor/)
 -   [Promise](https://eryn.io/roblox-lua-promise/)
+-   [Fusion 3.0](https://elttob.uk/Fusion/0.3/)
 -   .._entre muitas outras libs_
 
 ---
