@@ -5,16 +5,19 @@ local Players = game:GetService('Players')
 local ProfileStore = require(script.ProfileStore)
 local Template = require(script.Template)
 
+--</Misc
 type IProfile = ProfileStore.Profile<typeof(Template.Content)>
+
+--</Store
+local _PlayerStore = ProfileStore.New(Template.STORE_NAME, Template.Content)
+
+if Template.USE_MOCK then
+	_PlayerStore = _PlayerStore.Mock
+end
 
 --</Manager
 local DataManager = {}
-DataManager.PlayerStore = ProfileStore.New(Template.STORE_NAME, Template.Content)
 DataManager.Profiles = {} :: {[Player]: IProfile}
-
-if Template.USE_MOCK then
-	DataManager.PlayerStore = DataManager.PlayerStore.Mock
-end
 
 function DataManager:GetProfile(Client: Player): IProfile?
 	local Profile = DataManager.Profiles[Client]
@@ -56,7 +59,7 @@ end
 function DataManager:OnPlayerAdded(Client: Player)
 	if DataManager.Profiles[Client] then return end
 	
-	local Profile = DataManager.PlayerStore:StartSessionAsync(`{Client.UserId}`, {
+	local Profile = _PlayerStore:StartSessionAsync(`{Client.UserId}`, {
 		Cancel = function()
 			return Client.Parent ~= Players
 		end,
