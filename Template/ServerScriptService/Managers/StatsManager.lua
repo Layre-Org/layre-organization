@@ -5,14 +5,14 @@ local ServerScriptService = game:GetService("ServerScriptService")
 local DataManager = require(ServerScriptService.Core.DataManager)
 
 --</Types
-export type Currency = 'Coins'
+export type Currency = 'Cash'
 
 local StatsManager = {}
 
 function StatsManager:OnPlayerAdded(Client: Player)
 	local StatsData = DataManager:Get(Client, 'Stats')
 	
-	Client:SetAttribute('Coins', StatsData.Coins or 0)
+	Client:SetAttribute('Cash', StatsData.Cash or 0)
 end
 
 function StatsManager:AddCurrency(Client: Player, Currency: Currency, Amount: number)

@@ -1,22 +1,17 @@
 return {
 	['Stats'] = {
-		Coins = 0
+		Cash = 0
 	},
 	
 	['Inventory'] = {
 		Infos = {
-			TotalItems = 1,
+			TotalItems = 0,
 			MaxItems = 25,
 			MaxEquippedItems = 1,
 			CurrentlyEquippedAmount = 0,
 			CurrentlyEquippedIDs = {}
 		},
 		
-		Items = {
-			--Example = {
-			--	Amount = 1,
-			--	Rarity = 'Common'
-			--}
-		}
+		Items = {}
 	},
 }
