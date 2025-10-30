@@ -5,20 +5,14 @@ local Players = game:GetService('Players')
 local ProfileStore = require(script.ProfileStore)
 local Template = require(script.Template)
 
---</Misc
-local DATA_NAME = '_PlayerStore000'
-local PROFILE_TIMEOUT = 10
-local USE_MOCK = false
-local LOG_ON_DATA_LOAD = true
-
-type IProfile = ProfileStore.Profile<typeof(Template)>
+type IProfile = ProfileStore.Profile<typeof(Template.Content)>
 
 --</Manager
 local DataManager = {}
-DataManager.PlayerStore = ProfileStore.New(DATA_NAME, Template)
+DataManager.PlayerStore = ProfileStore.New(Template.STORE_NAME, Template.Content)
 DataManager.Profiles = {} :: {[Player]: IProfile}
 
-if USE_MOCK then
+if Template.USE_MOCK then
 	DataManager.PlayerStore = DataManager.PlayerStore.Mock
 end
 
@@ -27,7 +21,7 @@ function DataManager:GetProfile(Client: Player): IProfile?
 	local t = tick()
 	
 	while not Profile and Client.Parent == Players do
-		if tick() - t >= PROFILE_TIMEOUT then break end
+		if tick() - t >= Template.PROFILE_TIMEOUT then break end
 		
 		Profile = DataManager.Profiles[Client]
 		task.wait()
@@ -83,7 +77,7 @@ function DataManager:OnPlayerAdded(Client: Player)
 	if Client:IsDescendantOf(Players) then
 		DataManager.Profiles[Client] = Profile
 
-		if LOG_ON_DATA_LOAD then
+		if Template.LOG_ON_DATA_LOAD then
 			print(`Loaded data for {Client.DisplayName}:`, Profile.Data)
 		end
 	else
