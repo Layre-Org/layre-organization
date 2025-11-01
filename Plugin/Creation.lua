@@ -8,8 +8,9 @@ Creation.Paths = {
 	['ComponentsServer'] = 'ServerScriptService.Components',
 
 	['Controllers'] = 'ReplicatedStorage.Packages.Client.Controllers',
-	['UIControllers'] = 'ReplicatedStorage.Packages.Client.UIControllers.Controllers',
-	['UIStore'] = 'ReplicatedStorage.Packages.Client.UIControllers.Stores',
+	['UIControllers'] = 'ReplicatedStorage.Packages.Client.UI.Controllers',
+	['UIComponent'] = 'ReplicatedStorage.Packages.Client.UI.Components.UI',
+	['UIStore'] = 'ReplicatedStorage.Packages.Client.UI.Stores',
 	['ClassesClient'] = 'ReplicatedStorage.Packages.Client.Classes',
 	['ComponentsClient'] = 'ReplicatedStorage.Packages.Client.Components',
 
