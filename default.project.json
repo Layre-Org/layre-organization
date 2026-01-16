@@ -1,0 +1,47 @@
+{
+  "name": "layre-organization",
+  "tree": {
+    "$className": "DataModel",
+    "ReplicatedStorage": {
+      "$ignoreUnknownInstances": true,
+      "Packages": {
+        "$className": "Folder",
+        "Shared": {
+          "$className": "Folder",
+          "$path": "src/Shared"
+        },
+        "Client": {
+          "$className": "Folder",
+          "$path": "src/Client"
+        }
+      }
+    },
+    "ServerScriptService": {
+      "$ignoreUnknownInstances": true,
+      "Managers": {
+        "$className": "Folder",
+        "$path": "src/Server/Managers"
+      },
+      "Events": {
+        "$className": "Folder",
+        "$path": "src/Server/Events"
+      },
+      "Core": {
+        "$className": "Folder",
+        "$path": "src/Server/Core"
+      },
+      "Handlers": {
+        "$className": "Folder",
+        "$path": "src/Server/Handlers"
+      },
+      "Classes": {
+        "$className": "Folder",
+        "$path": "src/Server/Classes"
+      },
+      "Components": {
+        "$className": "Folder",
+        "$path": "src/Server/Components"
+      }
+    }
+  }
+}
