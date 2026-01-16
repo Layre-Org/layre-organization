@@ -1,47 +1,81 @@
 {
-  "name": "layre-organization",
-  "tree": {
-    "$className": "DataModel",
-    "ReplicatedStorage": {
-      "$ignoreUnknownInstances": true,
-      "Packages": {
-        "$className": "Folder",
-        "Shared": {
-          "$className": "Folder",
-          "$path": "src/Shared"
-        },
-        "Client": {
-          "$className": "Folder",
-          "$path": "src/Client"
-        }
-      }
-    },
-    "ServerScriptService": {
-      "$ignoreUnknownInstances": true,
-      "Managers": {
-        "$className": "Folder",
-        "$path": "src/Server/Managers"
-      },
-      "Events": {
-        "$className": "Folder",
-        "$path": "src/Server/Events"
-      },
-      "Core": {
-        "$className": "Folder",
-        "$path": "src/Server/Core"
-      },
-      "Handlers": {
-        "$className": "Folder",
-        "$path": "src/Server/Handlers"
-      },
-      "Classes": {
-        "$className": "Folder",
-        "$path": "src/Server/Classes"
-      },
-      "Components": {
-        "$className": "Folder",
-        "$path": "src/Server/Components"
-      }
-    }
-  }
+	"name": "Layre with Rojo",
+	"tree": {
+		"$className": "DataModel",
+		"ReplicatedStorage": {
+			"$ignoreUnknownInstances": true,
+			"Packages": {
+				"$className": "Folder",
+				"Shared": {
+					"$className": "Folder",
+					"GameUtility": {
+						"$className": "Folder"
+					},
+					"Packets": {
+						"$className": "Folder"
+					},
+					"Settings": {
+						"$className": "Folder",
+						"$path": "src/Shared/Settings"
+					},
+					"Types": {
+						"$className": "Folder"
+					},
+					"Utility": {
+						"$className": "Folder"
+					}
+				},
+				"Client": {
+					"$className": "Folder",
+					"Controllers": {
+						"$className": "Folder"
+					},
+					"Classes": {
+						"$className": "Folder"
+					},
+					"Components": {
+						"$className": "Folder"
+					},
+					"Core": {
+						"$className": "Folder",
+						"$path": "src/Client/Core"
+					},
+					"UIControllers": {
+						"$className": "Folder",
+						"$path": "src/Client/UIControllers"
+					},
+					"UIComponents": {
+						"$className": "Folder",
+						"$path": "src/Client/UIComponents"
+					},
+					"UIStores": {
+						"$className": "Folder"
+					}
+				}
+			}
+		},
+		"ServerScriptService": {
+			"$ignoreUnknownInstances": true,
+			"Managers": {
+				"$className": "Folder",
+				"$path": "src/Server/Managers"
+			},
+			"Events": {
+				"$className": "Folder"
+			},
+			"Core": {
+				"$className": "Folder",
+				"$path": "src/Server/Core"
+			},
+			"Handlers": {
+				"$className": "Folder"
+			},
+			"Classes": {
+				"$className": "Folder"
+			},
+			"Components": {
+				"$className": "Folder"
+			}
+		}
+	}
 }

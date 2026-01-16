@@ -148,10 +148,10 @@ function Initialize()
 		if string.find(Module.Name, '_') or not string.find(Module.Name, 'Controller') or not Module:IsA('ModuleScript') then continue end
 		local BaseModule = require(Module)
 		if BaseModule.Janitor == true then
-			BaseModule.__Janitor = Janitor.new()
-			BaseModule.CleanUp = function(self) self.__Janitor:Cleanup() end
-			BaseModule.Add = function(self, Process, DestroyCall) self.__Janitor:Add(Process, DestroyCall) end
-			BaseModule.Janitor = nil
+			BaseModule.Janitor = Janitor.new()
+			BaseModule.Cleanup = function(self) self.Janitor:Cleanup() end
+			BaseModule.Add = function(self, Process, DestroyCall, index) self.Janitor:Add(Process, DestroyCall, index) end
+			BaseModule.Remove = function(self, index) self.Janitor:Remove(index) end
 		end
 		Controllers[Module] = BaseModule
 	end
@@ -176,10 +176,10 @@ function Initialize()
 		if typeof(Req) ~= 'table' then continue end
 
 		if Req.Janitor == true then
-			Req.__Janitor = Janitor.new()
-			Req.CleanUp = function(self) self.__Janitor:Cleanup() end
-			Req.Add = function(self, Process, DestroyCall) self.__Janitor:Add(Process, DestroyCall) end
-			Req.Janitor = nil
+			Req.Janitor = Janitor.new()
+			Req.Cleanup = function(self) self.Janitor:Cleanup() end
+			Req.Add = function(self, Process, DestroyCall, index) self.Janitor:Add(Process, DestroyCall, index) end
+			Req.Remove = function(self, index) self.Janitor:Remove(index) end
 		end
 
 		if Module:IsDescendantOf(UIFolder.Controllers) then

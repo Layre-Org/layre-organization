@@ -37,20 +37,20 @@ local function CallStep(Managers: {}, Step: string, ...)
 				table.remove(errorParts, 1)
 				table.remove(parts, 1)
 				local fullMessage = table.concat(errorParts, ':')
-				
+
 				local pathParts = string.split(path, '.')
 				local serviceName = pathParts[1]
 				local parentFolder = pathParts[#pathParts-1]
 				local errorOwner = pathParts[#pathParts]
 				local errorMessage = `[{parentFolder} -> {errorOwner}] Error during execution of [{Step}] at line [{line}]:\n\n{fullMessage}`
 				errorMessage ..= '\n\n--<  Full Stackrace  >--'
-				
+
 				for _, part in parts do
 					errorMessage ..= `\n\n{part}`
 				end
 
 				errorMessage ..= '\n\n--<  Original Error  >--\n\n' .. message
-				
+
 				warn(errorMessage)
 			end
 		end
@@ -87,7 +87,7 @@ local function OnPlayerAdded(Client: Player)
 
 	Client:SetAttribute('Health', 100)
 	Client:SetAttribute('MaxHealth', 100)
-	Client:SetAttribute('RespawnTime', 1)
+	Client:SetAttribute('RespawnTime', 2)
 
 	Client:GetAttributeChangedSignal('Health'):Connect(function()
 		local Char = Client.Character
