@@ -5,24 +5,31 @@
 		"ReplicatedStorage": {
 			"$ignoreUnknownInstances": true,
 			"Packages": {
+				"$ignoreUnknownInstances": true,
 				"$className": "Folder",
 				"Shared": {
+					"$ignoreUnknownInstances": true,
 					"$className": "Folder",
 					"GameUtility": {
-						"$className": "Folder"
+						"$className": "Folder",
+						"$ignoreUnknownInstances": true
 					},
 					"Packets": {
-						"$className": "Folder"
+						"$className": "Folder",
+						"$ignoreUnknownInstances": true
 					},
 					"Settings": {
 						"$className": "Folder",
-						"$path": "src/Shared/Settings"
+						"$path": "src/Shared/Settings",
+						"$ignoreUnknownInstances": true
 					},
 					"Types": {
-						"$className": "Folder"
+						"$className": "Folder",
+						"$ignoreUnknownInstances": true
 					},
 					"Utility": {
-						"$className": "Folder"
+						"$className": "Folder",
+						"$ignoreUnknownInstances": true
 					}
 				},
 				"Client": {
@@ -58,23 +65,29 @@
 			"$ignoreUnknownInstances": true,
 			"Managers": {
 				"$className": "Folder",
-				"$path": "src/Server/Managers"
+				"$path": "src/Server/Managers",
+				"$ignoreUnknownInstances": true
 			},
 			"Events": {
-				"$className": "Folder"
+				"$className": "Folder",
+				"$ignoreUnknownInstances": true
 			},
 			"Core": {
 				"$className": "Folder",
-				"$path": "src/Server/Core"
+				"$path": "src/Server/Core",
+				"$ignoreUnknownInstances": true
 			},
 			"Handlers": {
-				"$className": "Folder"
+				"$className": "Folder",
+				"$ignoreUnknownInstances": true
 			},
 			"Classes": {
-				"$className": "Folder"
+				"$className": "Folder",
+				"$ignoreUnknownInstances": true
 			},
 			"Components": {
-				"$className": "Folder"
+				"$className": "Folder",
+				"$ignoreUnknownInstances": true
 			}
 		}
 	}

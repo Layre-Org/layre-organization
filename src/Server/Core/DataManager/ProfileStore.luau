@@ -1339,7 +1339,7 @@ local function RobloxMessageSubscription(profile, unique_session_id)
 
 	local roblox_message_subscription = MessagingService:SubscribeAsync("PS_" .. unique_session_id, function(message)
 		if type(message.Data) == "table" and message.Data.LoadCount == profile.SessionLoadCount then
-			-- High reaction rate, based on numPlayers × 10 DataStore budget as of writing
+			-- High reaction rate, based on numPlayers ï¿½ 10 DataStore budget as of writing
 			if os.clock() - last_roblox_message > 6 then 
 				last_roblox_message = os.clock()
 				if profile:IsActive() == true then
