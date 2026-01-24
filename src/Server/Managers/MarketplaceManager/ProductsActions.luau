@@ -7,9 +7,9 @@ local ProductsSettings = require(ReplicatedStorage.Packages.Shared.Settings.Prod
 
 local ProductsActions = {}
 
-ProductsActions[ProductsSettings.Buy1xExtraPicking.ProductId] = function(Client: Player)
-	PurchasesPackets.OnProductPurchased.sendTo(true, Client)
-end
+-- ProductsActions[ProductsSettings.Buy1xExtraPicking.ProductId] = function(Client: Player)
+-- 	PurchasesPackets.OnProductPurchased.sendTo(true, Client)
+-- end
 
 
 return ProductsActions
