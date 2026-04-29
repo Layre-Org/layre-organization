@@ -80,7 +80,7 @@ Combat.DealDamage.sendToAll({ target = "Enemy", amount = 50 })
 Combat.DealDamage.sendToList(players, { target = "Enemy", amount = 50 })
 
 -- Para uma lista de players exceto uma lista em específico
-Combat.DealDamage.sendToExcept(exception, { target = "Enemy", amount = 50 }) -- exception também aceita um array de players
+Combat.DealDamage.sendToAllExcept(exception, { target = "Enemy", amount = 50 }) -- exception também aceita um array de players
 ```
 
 **Cliente → Servidor:**
