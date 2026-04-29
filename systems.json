@@ -1,16 +1,9 @@
 [
     {
-        "id": "combat",
-        "name": "Combat System",
-        "description": "Sistema de combate com hitbox e knockback",
-        "version": "1.2.0",
-        "assetId": 123456789
-    },
-    {
-        "id": "inventory",
-        "name": "Inventory System", 
-        "description": "Inventário com slots e persistência",
-        "version": "2.0.1",
-        "assetId": 987654321
+        "id": "test",
+        "name": "Test System",
+        "description": "Sistema de teste",
+        "version": "1.0.0",
+        "assetId": 92547550225956
     }
 ]
