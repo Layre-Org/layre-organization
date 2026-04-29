@@ -22,7 +22,7 @@ Este `export type` consegue aplicar todos os `:Methods()` da Classe e auxilia na
 
 ## Herança com a lib Super
 
-Na pasta `Packages/Shared/Utility` em `ReplicatedStorage` é possível encontrar um Module denominado `Super`, ele quem torna possível a herança no LuaU. Para que funcione corretamente, ela deve ser chamada na definição do self na classe filha, do seguinte modo:
+Na pasta `Shared/Utility` em `ReplicatedStorage` é possível encontrar um Module denominado `Super`, ele quem torna possível a herança no LuaU. Para que funcione corretamente, ela deve ser chamada na definição do self na classe filha, do seguinte modo:
 
 ```lua
 local self = Super(ClassePai, ClasseFilha)

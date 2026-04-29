@@ -1,14 +1,14 @@
-# Layre Organization
+# Layre Framework
 
-Podemos considerar a org uma Framework exlusiva, com um amontoado de features que misturam [Atalhos](https://github.com/Layre-Org/layre-organization/blob/main/Docs/Plugin.md#lista-de-comandos-command-bar) (Plugin), [Snippets](https://github.com/Layre-Org/layre-organization/blob/main/Docs/Plugin.md#snipetts) (Plugin), [Padrões de Projeto](#padrões-de-projeto) e entre muitas outras funcionalidades, onde o principal objetivo é contornar o principal vilão do Roblox Studio: **A produtividade**.
+O Framework da Layre consiste na padronização de código, com um amontoado de features que misturam [Atalhos](https://github.com/Layre-Org/layre-organization/blob/main/Docs/Plugin.md#lista-de-comandos-command-bar) (Plugin), [Snippets](https://github.com/Layre-Org/layre-organization/blob/main/Docs/Plugin.md#snipetts) (Plugin), [Padrões de Projeto](#padrões-de-projeto) e entre muitas outras funcionalidades, onde o principal objetivo é contornar o principal vilão do Roblox Studio: **A produtividade**.
 
-Nesse readme você consegue consultar cada tópico que **A Org** aborda, cada índice foi separado por categoria/assunto, basta clicar e ir navegando onde te interessa.
+Nesse readme você consegue consultar cada tópico que o **Framework** aborda, cada índice foi separado por categoria/assunto, basta clicar e ir navegando onde te interessa.
 
 ---
 
 ## 📦 Instalação
 
-Tudo gira em torno do [Plugin](https://github.com/Layre-Org/layre-organization/blob/main/Docs/Plugin.md), é com ele que você vai injetar e utilizar A Org.
+Tudo gira em torno do [Plugin](https://github.com/Layre-Org/layre-organization/blob/main/Docs/Plugin.md), é com ele que você vai injetar e utilizar o Framework.
 
 Você até pode usar e instalar manualmente os `.rbxm` disponibilizados, mas fica completamente por sua conta e risco, e **não é nada recomendável** que faça isso.
 
@@ -46,13 +46,12 @@ Você até pode usar e instalar manualmente os `.rbxm` disponibilizados, mas fic
 
 ### Ferramentas Exclusivas (diretamente integradas)
 
--   [ByteNet](https://ffrostfall.github.io/ByteNet/) (adaptado e mantido por [@Gui97p](https://github.com/Gui97p))
+-   Flux (Fortemente baseado em [ByteNet](https://ffrostfall.github.io/ByteNet/), mantido por [@Gui97p](https://github.com/Gui97p))
 -   LuaO (desenvolvido por [@Gui97p](https://github.com/Gui97p) e [@YureAnjos](https://github.com/YureAnjos))
 -   Data Structures (desenvolvido por [@Gui97p](https://github.com/Gui97p))
--   Debounce (desenvolvido por [@Gui97p](https://github.com/Gui97p))
 -   [Super](https://github.com/Layre-Org/layre-organization/blob/main/Docs/Classes.md#herança-com-a-lib-super) (desenvolvido por [@Gui97p](https://github.com/Gui97p))
 -   [Janitor](https://howmanysmall.github.io/Janitor/)
--   [Promise](https://eryn.io/roblox-lua-promise/)
+-   [Promise](https://eryn.io/roblox-lua-promise/) (Movido para o LuaO, com base em task)
 -   [Fusion 3.0](https://elttob.uk/Fusion/0.3/)
 -   .._entre muitas outras libs_
 
@@ -62,4 +61,4 @@ Você até pode usar e instalar manualmente os `.rbxm` disponibilizados, mas fic
 
 Antes de solicitar um Issue ou PR (Pull Request) é de extrema importância entender sobre o [SemVer](https://semver.org/lang/pt-BR/) (Versionamento Semântico) e estar ciente das últimas versões publicadas em [Releases](https://github.com/Layre-Org/layre-organization/releases).
 
--   Veja [como contribuir com a Org](https://github.com/Layre-Org/layre-organization/blob/main/Docs/PRsAndContribution.md)
+-   Veja [como contribuir com o Framework](https://github.com/Layre-Org/layre-organization/blob/main/Docs/PRsAndContribution.md)

@@ -1,6 +1,6 @@
 # Components
 
-Cada tipo de componente possuí seu papel principal dentro da org, **Components** são parecidos com as [Classes](https://github.com/Layre-Org/layre-organization/blob/main/Docs/Classes.md), mas com alguns fatores específicos, já os **UIComponents** fazem parte da UI Framework da Org com maneiras de uso completamente diferentes.
+Cada tipo de componente possui seu papel principal dentro do framework, **Components** são parecidos com as [Classes](https://github.com/Layre-Org/layre-organization/blob/main/Docs/Classes.md), mas com alguns fatores específicos, já os **UIComponents** fazem parte da UI Framework com maneiras de uso completamente diferentes.
 
 Entretanto, componentes possuem um papel claro: criar blocos de código reutilizáveis e personalizáveis.
 
@@ -14,7 +14,7 @@ Entretanto, componentes possuem um papel claro: criar blocos de código reutiliz
 
 Em qualquer projeto (principalmente jogos completos) precisamos criar diversos NPCs, Interações pelo Mapa, Áreas de Spawn de inimigos, Hitbox e assim vai.. Percebe-se que cada um dos itens citados precisam estar presentes em cada canto do jogo (claro, dependendo do mesmo).
 
-Por isso existem os Componentes, pois criando um componente para uma Hitbox por exemplo, você consegue criar várias Hitbox para diversos lugares do jogo, com apenas um comando no código: `HitboxComponent:Construct()`.
+Por isso existem os Componentes, pois criando um componente para uma Hitbox por exemplo, você consegue criar várias Hitboxes para diversos lugares do jogo, com apenas um comando no código: `HitboxComponent:Construct()`.
 
 > **💡 Dica:** A mesma lógica se aplica aos `UIComponents`, entretanto, se referindo à questões de interface do game.
 
@@ -24,7 +24,7 @@ Uma [Classe](https://github.com/Layre-Org/layre-organization/blob/main/Docs/Clas
 
 **Lembre-se que `Components` focam em Instâncias do jogo, como Models, ProximityPrompt.. Diferente dos `UIComponents` que focam exclusivamente em Interfaces.**
 
-### Sintáxe Base dos Components
+### Sintaxe Base dos Components
 
 Esta é a base para Components, veja que utilizamos a lib `Component` do **Knit Framework**:
 
@@ -77,15 +77,15 @@ end
 
 > ⚠️ **IMPORTANTE:** Temos previsão para modificar algumas funcionalidades de UIComponents, é importante estar ciente das novas mudanças que podem ocorrer neste tópico.
 
-São blocos de código reutilizáveis para as interfaces de seu jogo, eles fazem parte da UI Framework da Org e possuem uma sintaxe específica, gerida pelo [Client Core](https://github.com/Layre-Org/layre-organization/blob/main/Template/ReplicatedStorage/Packages/Client/Core/Main.lua) junto de **Conceitos de Componentização** _(comumente conhecidos em React.js)_ junto das principais funcionalidades do [Fusion 3.0](https://elttob.uk/Fusion/0.3/)
+São blocos de código reutilizáveis para as interfaces de seu jogo, eles fazem parte da UI Framework e possuem uma sintaxe específica, gerida pelo **Client Core** junto de **Conceitos de Componentização** _(comumente conhecidos em React.js)_ e das principais funcionalidades do [Fusion 3.0](https://elttob.uk/Fusion/0.3/)
 
 -   Veja a [documentação do Fusion sobre UIComponents](https://elttob.uk/Fusion/0.3/tutorials/best-practices/components)
 
-### A Org gerencia UIComponents de uma forma específica..
+### O Framework gerencia UIComponents de uma forma específica..
 
-Assim como o resto da UI Framework da Org, os `UIComponents` ficam localizados no diretório `Packages/Client/UI/Components/` dentro de `ReplicatedStorage`.
+Assim como o resto da UI Framework, os `UIComponents` ficam localizados no diretório `Client/UI/Components/` dentro de `ReplicatedStorage`.
 
-Quando o Client inicializa, o [Client Core](https://github.com/Layre-Org/layre-organization/blob/main/Template/ReplicatedStorage/Packages/Client/Core/Main.lua) gera um `Scope` com todos os UIComponents listados de uma forma fácil para acessá-los. Este `Scope` então é o mesmo enviado à todos os [UIControllers](https://github.com/Layre-Org/layre-organization/blob/main/Docs/Controllers.md#exclusividade-de-uicontrollers), onde para criar qualquer Component, basta seguir o exemplo:
+Quando o Client inicializa, o **Client Core** gera um `Scope` com todos os UIComponents listados de uma forma fácil para acessá-los. Este `Scope` então é o mesmo enviado à todos os [UIControllers](https://github.com/Layre-Org/layre-organization/blob/main/Docs/Controllers.md#exclusividade-de-uicontrollers), onde para criar qualquer Component, basta seguir o exemplo:
 
 ```lua
 local ExampleController = {}
@@ -104,7 +104,7 @@ end
 return ExampleController
 ```
 
-### Sintáxe Base para UIComponents
+### Sintaxe Base para UIComponents
 
 Para uma boa leitura e manutenção de código, existe um padrão de sintáxe para criar UIComponents, e isso envolve:
 
@@ -137,12 +137,11 @@ end
 
 > **💡 Dica:** Nenhum destes UIComponents foram estritamente testados e portanto, caso encontre um bug, é importante nos notificar. Caso tenha uma ideia de componente novo, fale conosco para analisarmos a ideia.
 
-Percebe-se que há uma outra pasta chamada **UI** dentro de `/Components`. Dentro dela você encontra os **UIComponents built-in** da Org, que são componentes genéricos e os mais utilizados nos jogos.
+Percebe-se que há uma outra pasta chamada **UI** dentro de `/Components`. Dentro dela você encontra os **UIComponents built-in** do Framework, que são componentes genéricos e os mais utilizados nos jogos.
 
 -   **Temos uma lista considerável de UIComponents que já estão prontos para uso**
-    -   Consulte a lista dos [Códigos dos UIComponents](https://github.com/Layre-Org/layre-organization/tree/main/Template/ReplicatedStorage/Packages/Client/UI/Components/UI)
 
-Um dos UIComponents e o mais utilizado é o [Canvas Component](https://github.com/Layre-Org/layre-organization/blob/main/Template/ReplicatedStorage/Packages/Client/UI/Components/UI/Canvas.lua) (gerencia CanvasGroup's), veja um trecho de código:
+Um dos UIComponents e o mais utilizado é o **Canvas Component** (gerencia CanvasGroup's), veja um trecho de código:
 
 ```lua
 -- @@ ++4 @@
