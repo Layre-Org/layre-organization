@@ -40,13 +40,12 @@ Você até pode usar e instalar manualmente os `.rbxm` disponibilizados, mas fic
 -   [Managers](https://github.com/Layre-Org/layre-organization/blob/main/Docs/Managers.md)
 -   [Controllers](https://github.com/Layre-Org/layre-organization/blob/main/Docs/Controllers.md)
 -   [Components](https://github.com/Layre-Org/layre-organization/blob/main/Docs/Components.md)
--   [Handlers](https://github.com/Layre-Org/layre-organization/blob/main/Docs/Handlers.md)
 -   [Classes](https://github.com/Layre-Org/layre-organization/blob/main/Docs/Classes.md)
 -   [Stores](https://github.com/Layre-Org/layre-organization/blob/main/Docs/Stores.md)
 
 ### Ferramentas Exclusivas (diretamente integradas)
 
--   Flux (Fortemente baseado em [ByteNet](https://ffrostfall.github.io/ByteNet/), mantido por [@Gui97p](https://github.com/Gui97p))
+-   [Flux](https://github.com/Layre-Org/layre-organization/blob/main/Docs/Flux.md) (Fortemente baseado em [ByteNet](https://ffrostfall.github.io/ByteNet/), mantido por [@Gui97p](https://github.com/Gui97p))
 -   LuaO (desenvolvido por [@Gui97p](https://github.com/Gui97p) e [@YureAnjos](https://github.com/YureAnjos))
 -   Data Structures (desenvolvido por [@Gui97p](https://github.com/Gui97p))
 -   [Super](https://github.com/Layre-Org/layre-organization/blob/main/Docs/Classes.md#herança-com-a-lib-super) (desenvolvido por [@Gui97p](https://github.com/Gui97p))

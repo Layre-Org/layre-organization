@@ -16,7 +16,7 @@ Existe uma lista de métodos exclusivos e pensados para melhorar a produtividade
 
 ### Métodos de Execução
 
-É em algum destes métodos que você vai conectar os `listeners` do **Flux**, configurar [Classes](https://github.com/Layre-Org/layre-organization/blob/main/Docs/Classes.md), [Components](https://github.com/Layre-Org/layre-organization/blob/main/Docs/Components.md) ou simplesmente configurar variáveis daquele código.
+É em algum destes métodos que você vai conectar os `listeners` do [Flux](https://github.com/Layre-Org/layre-organization/blob/main/Docs/Flux.md), configurar [Classes](https://github.com/Layre-Org/layre-organization/blob/main/Docs/Classes.md), [Components](https://github.com/Layre-Org/layre-organization/blob/main/Docs/Components.md) ou simplesmente configurar variáveis daquele código.
 
 -   `Manager:Setup()` -> Executa primeiro que tudo.
 -   `Manager:Start()` -> Executado após o Setup, é um método **padrão e o mais utilizado**.
