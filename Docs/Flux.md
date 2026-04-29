@@ -192,21 +192,21 @@ type Settings = {
 ### Exemplo com herança de settings
 
 ```lua
-local Combat = Flux.defineNamespace("Combat", {
-    settings = {
-        rateLimit = { window = 1, maxPackets = 20 }, -- padrão do namespace
-    },
-    packets = {
-        DealDamage = Flux.reliable({
+local Combat = Flux.defineNamespace("Combat", function()
+    return {
+        DealDamage = Flux.definePacket({
             value = ...,
         }, {
             rateLimit = { maxPackets = 5 } -- sobrescreve só o maxPackets nesse packet e recebe window = 1
         }),
-        SyncPosition = Flux.unreliable({
+        SyncPosition = Flux.definePacket({
             value = ...,
+            reliabilityType = 'unreliable'
             -- herda o rateLimit do namespace (window = 1, maxPackets = 20)
         }),
-    }
+    },
+end, {
+    rateLimit = { window = 1, maxPackets = 20 }, -- padrão do namespace
 })
 ```
 
