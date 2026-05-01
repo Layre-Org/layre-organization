@@ -23,7 +23,7 @@ Ambas as funcionalidades aparecem na aba de Plugins do Roblox Studio
 ### Para criar um ModuleScript e posicioná-lo no local adequado da Org, digite:
 
 ```lua
-NomeDesejado@+Tipo
+NomeDesejado!+Tipo
 ```
 
 Ao der Enter, um ModuleScript será criado dentro da pasta equivalente ao `Tipo` e será renomeado com base no `NomeDesejado`.
