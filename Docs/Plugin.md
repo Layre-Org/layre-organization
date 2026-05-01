@@ -77,7 +77,7 @@ end
 
 Esta função se refere à geração automática de tipos para as interfaces do game, usado em `Scopes` (Fusion) e o `Paths`.
 
-Tudo fica armazenado na pasta `__generated` em `ReplicatedStorage/Packages/Shared/Types/`, e dentro dela é comum existir:
+Tudo fica armazenado na pasta `__generated` em `ReplicatedStorage/Shared/Types/`, e dentro dela é comum existir:
 
 -   **UIPaths:** Contém uma "descrição" completa de todo o StarterGui
 -   **UIScope:** Gera toda a tipagem necessária para os Scopes do Fusion (que são modificados pelo **Client Core**
