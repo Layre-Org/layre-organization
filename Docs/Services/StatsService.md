@@ -198,17 +198,17 @@ Modifiers são **funções de transformação** aplicadas automaticamente sobre 
 Registra um modifier para um atributo específico.
 
 ```lua
-StatsService:AddModifier(Name: string, Attribute: string, Modifier: (value: any) -> any): void
+StatsService:AddModifier(Name: string, Attribute: string, Modifier: (player: Player, value: any) -> any): void
 ```
 
 ```lua
 -- Dobra o XP ganho
-StatsService:AddModifier("VipBonus", "XP", function(amount)
+StatsService:AddModifier("VipBonus", "XP", function(Client, amount)
     return amount * 2
 end)
 
 -- Adiciona 10% de moedas extras
-StatsService:AddModifier("EventBonus", "Cash", function(amount)
+StatsService:AddModifier("EventBonus", "Cash", function(Client, amount)
     return amount * 1.1
 end)
 ```

@@ -37,6 +37,7 @@ Player
 ```
 
 Ao spawnar o character, o serviço cria listeners que mantêm `Humanoid.Health` e o atributo `Health` sempre sincronizados. Isso significa que você pode alterar a saúde por qualquer lado — atributo ou Humanoid — e o outro será atualizado automaticamente.
+O player cura automaticamente com o tempo utilizando valores definidos nas constantes do servidor (HEAL_TIME, HEAL_RATE), porém apenas se HEAL_TIME for maior que 0 e o atributo definido por `CAN_HEAL_ATTR` seja `true`.
 
 > **💡 Dica:** Prefira sempre usar os métodos do PlayersService para alterar saúde. Alterar `Humanoid.Health` diretamente funciona, mas usar os métodos garante validação, clamp automático e consistência com o `MaxHealth`.
 
@@ -62,7 +63,29 @@ local newHealth = PlayersService:TakeDamage(player, 25)
 local newHealth = PlayersService:TakeDamage(humanoid, 25)
 ```
 
-> **⚠️ Atenção:** `DamageAmount` deve ser um número **não-negativo**. Para curar, use `SetHealth`. Passar um Humanoid que não pertença a nenhum player causa um erro.
+> **⚠️ Atenção:** `DamageAmount` deve ser um número **não-negativo**. Para curar, use `Heal`. Passar um Humanoid que não pertença a nenhum player causa um erro.
+
+---
+
+### Heal
+
+Cura um player. Aceita tanto um `Player` quanto um `Humanoid` como alvo.
+
+```lua
+PlayersService:Heal(Target: Player | Humanoid, HealAmount: number): number
+```
+
+Retorna a nova saúde do player após a cura.
+
+```lua
+-- Por Player
+local newHealth = PlayersService:Heal(player, 25)
+
+-- Por Humanoid
+local newHealth = PlayersService:Heal(humanoid, 25)
+```
+
+> **⚠️ Atenção:** `HealAmount` deve ser um número **não-negativo**. Para dar dano, use `TakeDamage`. Passar um Humanoid que não pertença a nenhum player causa um erro.
 
 ---
 

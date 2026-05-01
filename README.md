@@ -128,6 +128,10 @@ Configurações **exclusivas do servidor**, acessíveis via `Constants.Server`:
 | `MAX_HEALTH` | `100` | Saúde máxima padrão ao entrar no jogo |
 | `MAX_HEALTH_ATTR` | `"MaxHealth"` | Nome do atributo de saúde máxima no Player |
 | `HEALTH_ATTR` | `"Health"` | Nome do atributo de saúde atual no Player |
+| `CAN_HEAL_ATTR` | `"CanHeal"` | Nome do atributo que define se o player pode ou não curar naturalmente |
+| `HEAL_TIME` | `1` | Segundos que levam para o player curar o valor definido por `HEAL_RATE` |
+| `HEAL_RATE` | `1/100` | O quanto é curado a cada segundo definido por `HEAL_TIME` |
+| `CAN_HEAL` | `true` | Valor padrão que define se o player começa o jogo curando naturalmente ou não |
 
 **Atributos e moedas:**
 
