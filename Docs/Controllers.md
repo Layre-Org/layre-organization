@@ -21,6 +21,8 @@ Existe uma lista de métodos, funcionalidades e padrões exclusivos para `Contro
 ## Funcionalidades em Comum (Controllers e UIControllers)
 
 -   [Métodos do LocalPlayer](#métodos-do-localplayer)
+-   [Prioridade de execução](#prioridade-de-execução)
+-   [Execução Assíncrona](#execução-assíncrona)
 
 ## Exclusividade de Controllers
 
@@ -69,3 +71,47 @@ O **Client Core** cria conexões de eventos para o `LocalPlayer` assim que o Cli
 -   `Controller:OnCharacterAdded(Player, Character)` -> Executado quando o `LocalCharacter` é spawnado, **ou seja: quando entrar e após cada respawn**.
 -   `Controller:OnCharacterAppearenceLoaded(Player, Character)` -> Executado quando a aparência do `LocalCharacter` é carregada.
 -   `Controller:OnPlayerDied(Player)` -> Executado quando o Client morre.
+
+
+### Prioridade de execução
+
+Todos os controllers, por padrão, possuem prioridade `0`, ou seja, executam aleatoriamente. Caso você queira que um controller execute antes que outro, você pode alterar a sua prioridade:
+
+```lua
+--</Controller
+local FasterController = {
+    Priority = 5,
+}
+
+return FasterController
+```
+
+Também é possível alterar a prioridade de apenas um método em específico, fazendo com que mude a ordem de execução daquela fase.
+
+```lua
+--</Controller
+local TestController = {
+    SetupPriority = 5,
+}
+
+function TestController:Setup()
+   -- vai executar com prioridade 5
+end
+
+return TestController
+```
+
+### Execução assíncrona
+
+Por padrão, toda execução de uma fase é `Síncrona`, porém caso você queira que a função seja `Assíncrona`, o framework te da a possibilidade de adicionar as key-words `Async` ou `Defer` após o nome da fase:
+
+```lua
+--</Controller
+local WorldController = {}
+
+function WorldController:StartAsync()
+    -- geração de mundo
+end
+
+return WorldController
+```

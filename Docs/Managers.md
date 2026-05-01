@@ -12,7 +12,8 @@ Existe uma lista de métodos exclusivos e pensados para melhorar a produtividade
 
 -   [Métodos de Execução](#métodos-de-execução)
 -   [Métodos de Players](#métodos-de-players)
--   [Métodos de Loop](#métodos-de-loop)
+-   [Prioridade de execução](#prioridade-de-execução)
+-   [Execução Assíncrona](#execução-assíncrona)
 
 ### Métodos de Execução
 
@@ -33,3 +34,46 @@ O **Server Core** cria conexões de eventos para cada Player que entre no jogo, 
 -   `Manager:OnCharacterAdded(Player, Character)` -> Executado quando o Character é spawnado, **ou seja: quando entrar e após cada respawn**.
 -   `Manager:OnCharacterAppearenceLoaded(Player, Character)` -> Executado quando a aparência do Character é carregada.
 -   `Manager:OnPlayerDied(Player, Character)` -> Executado quando um Player morre.
+
+### Prioridade de execução
+
+Todos os managers, por padrão, possuem prioridade `0`, ou seja, executam aleatoriamente. Caso você queira que um manager execute antes que outro, você pode alterar a sua prioridade:
+
+```lua
+--</Manager
+local FasterManager = {
+    Priority = 5,
+}
+
+return FasterManager
+```
+
+Também é possível alterar a prioridade de apenas um método em específico, fazendo com que mude a ordem de execução daquela fase.
+
+```lua
+--</Manager
+local TestManager = {
+    SetupPriority = 5,
+}
+
+function TestManager:Setup()
+   -- vai executar com prioridade 5
+end
+
+return TestManager
+```
+
+### Execução assíncrona
+
+Por padrão, toda execução de uma fase é `Síncrona`, porém caso você queira que a função seja `Assíncrona`, o framework te da a possibilidade de adicionar as key-words `Async` ou `Defer` após o nome da fase:
+
+```lua
+--</Manager
+local WorldManager = {}
+
+function WorldManager:StartAsync()
+    -- geração de mundo
+end
+
+return WorldManager
+```

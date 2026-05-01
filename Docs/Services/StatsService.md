@@ -21,6 +21,8 @@
   - [Wipe](#wipe)
 - [Modifiers](#modifiers)
   - [AddModifier](#addmodifier)
+  - [RemoveModifier](#removemodifier)
+  - [GetModifiers](#getmodifiers)
   - [ignoreModifiers](#ignoremodifiers)
 - [Infinite Currency](#infinite-currency)
 - [Constantes relacionadas](#constantes-relacionadas)
@@ -227,6 +229,20 @@ StatsService:RemoveModifier(Name: string, Attribute: string): void
 StatsService:RemoveModifier("VipBonus", "XP")
 
 StatsService:RemoveModifier("EventBonus", "Cash")
+```
+
+---
+
+### GetModifiers
+
+Retorna um array com objetos que possuem nome e função de execução dos modifiers
+
+```lua
+StatsService:GetModifiers(Attribute: string): {{Name: string, Execute: () -> ()}}
+```
+
+```lua
+local modifiers = StatsService:GetModifiers("XP")
 ```
 
 ---
