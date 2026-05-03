@@ -44,7 +44,7 @@ O plugin faz uma busca rápida em `ServerScriptService` e `ReplicatedStorage`, s
 
 ### Auto-GetService
 
-O Plugin importa automaticamente qualquer serviço padrão do Roblox, **basta digitar `!Nome` que o Auto-complete mostrará a sugestão**:
+O Plugin importa automaticamente qualquer serviço padrão do Roblox, **basta digitar `Nome` que o Auto-complete mostrará a sugestão**:
 
 ```diff
 +--</Services
