@@ -9,6 +9,7 @@
 ## Índice
 
 - [Gamepasses](#gamepasses)
+  - [HasGamepass](#hasgamepass)
   - [GamepassHook](#gamepasshook)
 - [Developer Products](#developer-products)
   - [ProductHook](#producthook)
@@ -31,6 +32,19 @@ Player
 O nome do atributo é definido por `AttributeName` nas constantes — se não definido, usa o nome da chave em `Constants.Gamepasses`.
 
 Para executar lógica customizada quando um player possui ou compra um gamepass, use `GamepassHook`.
+
+### HasGamepass
+
+Retorna `true` se o player possuir a gamepass com o id especificado
+
+```lua
+MarketplaceService:HasGamepass(Client: Player, PassId: number): boolean
+```
+
+```lua
+local has = MarketplaceService:HasGamepass(Player, Constants.Gamepasses.VipPass.Id)
+print(has) -- true / false
+```
 
 ### GamepassHook
 
