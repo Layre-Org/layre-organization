@@ -20,7 +20,7 @@ Ambas as funcionalidades aparecem na aba de Plugins do Roblox Studio
 
 ## Lista de Comandos (Command Bar)
 
-### Para criar um ModuleScript e posicioná-lo no local adequado da Org, digite:
+### Para criar um ModuleScript e posicioná-lo no local adequado do Framework, digite:
 
 ```lua
 NomeDesejado!+Tipo
