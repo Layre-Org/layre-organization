@@ -68,7 +68,7 @@ Podemos dar `require()` automaticamente em qualquer `Package` de dentro da Org. 
 local Handler = {}
 
 function Handler.Test()
-    -- digitou @Fusion -> Auto-complete encontrou o Package do Fusion
+    -- digitou !Fusion -> Auto-complete encontrou o Package do Fusion
 +   local Scope = Fusion.scoped()
 end
 ```
@@ -79,5 +79,4 @@ Esta função se refere à geração automática de tipos para as interfaces do 
 
 Tudo fica armazenado na pasta `__generated` em `ReplicatedStorage/Shared/Types/`, e dentro dela é comum existir:
 
--   **UIPaths:** Contém uma "descrição" completa de todo o StarterGui
 -   **UIScope:** Gera toda a tipagem necessária para os Scopes do Fusion (que são modificados pelo **Client Core**
