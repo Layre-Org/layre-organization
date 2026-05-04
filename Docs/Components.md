@@ -6,9 +6,9 @@ Entretanto, componentes possuem um papel claro: criar blocos de código reutiliz
 
 ## Índice
 
--   [Quando utilizar Componentes](#quando-utilizar-componentes)
--   [Como é um Component](#game-components)
--   [Como é o UIComponent](#o-que-são-uicomponents)
+- [Quando utilizar Componentes](#quando-utilizar-componentes)
+- [Como é um Component](#game-components)
+- [Como é o UIComponent](#o-que-são-uicomponents)
 
 ## Quando utilizar Componentes?
 
@@ -26,14 +26,14 @@ Uma [Classe](https://github.com/Layre-Org/layre-organization/blob/main/Docs/Clas
 
 ### Sintaxe Base dos Components
 
-Esta é a base para Components, veja que utilizamos a lib `Component` do **Knit Framework**:
+Esta é a base para Components, veja que utilizamos a lib [Component](https://sleitnick.github.io/RbxUtil/api/Component/)
 
 ```lua
 --</Services
 local ReplicatedStorage = game:GetService('ReplicatedStorage')
 
 --</Packages
-local Component = require(ReplicatedStorage.Packages.Shared.Utility.Component)
+local Component = require(ReplicatedStorage.Shared.Utility.Component)
 
 local ExampleComponent = Component.new({
 	Tag = 'Example'
@@ -58,7 +58,7 @@ local PickupPrompt = Component.new({
 })
 
 function PickupPrompt:Construct()
-    local Prompt: ProximityPrompt = self.Instance.Parent:FindFirstChildOfClass('ProximityPrompt')
+    local Prompt: ProximityPrompt = self.Instance
 
     if Client.Gamepass:GetAttribute('Magnet') then
         Prompt.MaxActivationDistance *= 1.5
@@ -79,13 +79,13 @@ end
 
 São blocos de código reutilizáveis para as interfaces de seu jogo, eles fazem parte da UI Framework e possuem uma sintaxe específica, gerida pelo **Client Core** junto de **Conceitos de Componentização** _(comumente conhecidos em React.js)_ e das principais funcionalidades do [Fusion 3.0](https://elttob.uk/Fusion/0.3/)
 
--   Veja a [documentação do Fusion sobre UIComponents](https://elttob.uk/Fusion/0.3/tutorials/best-practices/components)
+- Veja a [documentação do Fusion sobre UIComponents](https://elttob.uk/Fusion/0.3/tutorials/best-practices/components)
 
 ### O Framework gerencia UIComponents de uma forma específica..
 
 Assim como o resto da UI Framework, os `UIComponents` ficam localizados no diretório `Client/UI/Components/` dentro de `ReplicatedStorage`.
 
-Quando o Client inicializa, o **Client Core** gera um `Scope` com todos os UIComponents listados de uma forma fácil para acessá-los. Este `Scope` então é o mesmo enviado à todos os [UIControllers](https://github.com/Layre-Org/layre-organization/blob/main/Docs/Controllers.md#exclusividade-de-uicontrollers), onde para criar qualquer Component, basta seguir o exemplo:
+Quando o Client inicializa, o **Client Core** gera um [Scope](https://github.com/Layre-Org/layre-organization/blob/main/Docs/Scopes.md) com todos os UIComponents listados de uma forma fácil para acessá-los. Este [Scope](https://github.com/Layre-Org/layre-organization/blob/main/Docs/Scopes.md) então é o mesmo enviado à todos os [UIControllers](https://github.com/Layre-Org/layre-organization/blob/main/Docs/Controllers.md#exclusividade-de-uicontrollers), onde para criar qualquer Component, basta seguir o exemplo:
 
 ```lua
 local ExampleController = {}
@@ -109,27 +109,41 @@ return ExampleController
 Para uma boa leitura e manutenção de código, existe um padrão de sintáxe para criar UIComponents, e isso envolve:
 
 1. Criar e retornar uma `function(Scope, Props)` -> Sendo `Scope` o único parâmetro que é passado **Automaticamente** e `Props` uma `PropertyTable` com as configurações que deseja para aquele component.
-2. Especificar as tipagens `IProps` e `IReturn`, utilizando `Fusion.Value<any>` ou `Fusion.UsedAs<any>`.
+2. Especificar as tipagens `IProps` e `IReturn`, utilizando `Fusion.Value<any>`.
 3. (opcional) Utilizar `table.destruct()` do `LuaO/table` para separar certas propriedades daquele component/interface.
 
 **Veja o exemplo na prática:**
 
 ```lua
-export type IProps = {}
-
-export type IReturn = {
-	Scope: UIScope.Scope
+export type IProps = {
+	Label: TextLabel;
+	Text: Fusion.Value<string>;
+	Format: ((Current: string) -> string)?;
 }
 
-return function(Scope: UIScope.Scope, Props: IProps): IReturn
-	local InnerScope = Scope:innerScope() :: UIScope.Scope
+export type IReturn = TextLabel;
 
-	-- your component code here
-	-- ...
+return function(Scope: UIScope.IScope, Props: IProps): IReturn
+	local Label, Text, Format = table.destruct(Props, { 'Label', 'Text', 'Format' })
 
-	return {
-		Scope = InnerScope;
-	}
+	assert(Label, 'Missing prop "Label"')
+	assert(Text, 'Missing prop "Text"')
+
+	local FinalText = Scope:Computed(function(use)
+		local Current = use(Text)
+
+		if Format then
+			return Format(Current)
+		end
+
+		return tostring(Current)
+	end)
+
+	Props.Text = Props.Text or FinalText
+
+	Scope:Hydrate(Label)(Props)
+
+	return Label
 end
 ```
 
@@ -139,25 +153,42 @@ end
 
 Percebe-se que há uma outra pasta chamada **UI** dentro de `/Components`. Dentro dela você encontra os **UIComponents built-in** do Framework, que são componentes genéricos e os mais utilizados nos jogos.
 
--   **Temos uma lista considerável de UIComponents que já estão prontos para uso**
+- **Temos uma lista considerável de UIComponents que já estão prontos para uso**
 
 Um dos UIComponents e o mais utilizado é o **Canvas Component** (gerencia CanvasGroup's), veja um trecho de código:
 
 ```lua
--- @@ ++4 @@
-return function(Scope: UIScope.Scope, Props: IProps): IReturn
-	-- @@ ++4 @@
-	-- out props requires same scope
+export type IProps = {
+	Canvas: CanvasGroup;
+	Enabled: Fusion.Value<boolean>;
+	DisableSpring: boolean?; --> Optional<false>
+	SpringSpeed: number?; --> Optional<10>
+	SpringDamper: number?; --> Optional<1>
+}
+
+export type IReturn = CanvasGroup
+
+return function(Scope: UIScope.IScope, Props: IProps): IReturn
+	assert(Props.Canvas, 'Missing prop "Canvas"')
+	assert(Props.Enabled, 'Missing prop "Enabled"')
+
+	local Canvas, Enabled, DisableSpring, SpringSpeed, SpringDamper = table.destruct(Props, {
+		'Canvas', 'Enabled', 'DisableSpring', 'SpringSpeed', 'SpringDamper'
+	})
+
 	local Transparency = Scope:Computed(function(use) return use(Enabled) and 0 or 1 end)
 	local FinalTransparency = not DisableSpring and Scope:Spring(Transparency, SpringSpeed, SpringDamper) or Transparency
 	local Visible = Scope:Computed(function(use) return use(FinalTransparency) < .99 end)
 
-	local PropertyTable = Props
-	PropertyTable.Visible = PropertyTable.Visible or Visible;
-	PropertyTable.GroupTransparency = PropertyTable.GroupTransparency or FinalTransparency
+	Props.Visible = Props.Visible or Visible;
+	Props.GroupTransparency = Props.GroupTransparency or FinalTransparency
 
-	InnerScope:Hydrate(Canvas)(PropertyTable)
+	Scope:Hydrate(Canvas)(Props)
 
-	return Canvas, { ... }
+	return Canvas, {
+		Transparency = FinalTransparency;
+		Visible = Visible;
+	}
 end
+
 ```

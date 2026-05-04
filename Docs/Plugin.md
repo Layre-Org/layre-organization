@@ -2,21 +2,21 @@
 
 Para utilizar o Framework, você precisa obrigatoriamente usar o plugin. É ele que interpreta os Snippets, Auto-complete e até a tipagem dinâmica para os UIControllers. Ele mantém nosso código organizado, padronizado e legível graças o Auto-import de Services e Packages.
 
-> **💡 Dica:** Você pode customizar alguns atalhos do Studio para combinar com o Plugin, por exemplo: Auto-focar na Command Bar.
+> **💡 Dica:** Você pode customizar alguns atalhos do Studio para combinar com o Plugin, por exemplo: Auto-focar na Command Bar (ctrl + 9).
 
 # Índice das funcionalidades
 
--   [Funções Principais](#setup-e-systems)
--   [Atalhos com a Command Bar](#lista-de-comandos-command-bar)
--   [Snipetts e Auto-Complete](#snipetts)
--   [Tipagem Dinâmica](#tipagem-dinâmica)
+- [Funções Principais](#setup-e-systems)
+- [Atalhos com a Command Bar](#lista-de-comandos-command-bar)
+- [Snipetts e Auto-Complete](#snipetts)
+- [Tipagem Dinâmica](#tipagem-dinâmica)
 
 ## Setup e Systems
 
 Ambas as funcionalidades aparecem na aba de Plugins do Roblox Studio
 
--   **Setup:** Inicializa a estrutura de pastas mais recente do framework.
--   **Systems:** Mostra uma lista de sistemas oficiais que pode ser injetado no seu jogo.
+- **Setup:** Inicializa a estrutura de pastas mais recente do framework.
+- **Systems:** Mostra uma lista de sistemas oficiais que pode ser injetado no seu jogo.
 
 ## Lista de Comandos (Command Bar)
 
@@ -28,7 +28,7 @@ NomeDesejado!+Tipo
 
 Ao der Enter, um ModuleScript será criado dentro da pasta equivalente ao `Tipo` e será renomeado com base no `NomeDesejado`.
 
--   Para especificar o campo `Tipo`, use como base os **Padrões de Projeto**, são eles: UIController, Handler, Manager, Packet.. entre outros.
+- Para especificar o campo `Tipo`, use como base os **Padrões de Projeto**, são eles: UIController, Handler, Manager, Packet.. entre outros.
 
 ### Para abrir um ModuleScript automaticamente, digite um `!` seguido do `Nome`:
 
@@ -36,7 +36,7 @@ Ao der Enter, um ModuleScript será criado dentro da pasta equivalente ao `Tipo`
 !NomeDoModule
 ```
 
-O plugin faz uma busca rápida em `ServerScriptService` e `ReplicatedStorage`, se este ModuleScript existir ele então foca automaticamente no mesmo.
+O plugin faz uma busca rápida, se este ModuleScript existir ele então foca automaticamente no mesmo.
 
 > **💡 Dica:** O plugin precisa do `!` na maioria dos comandos, é assim que decide se é um comando dele ou não.
 
@@ -79,4 +79,4 @@ Esta função se refere à geração automática de tipos para as interfaces do 
 
 Tudo fica armazenado na pasta `__generated` em `ReplicatedStorage/Shared/Types/`, e dentro dela é comum existir:
 
--   **UIScope:** Gera toda a tipagem necessária para os Scopes do Fusion (que são modificados pelo **Client Core**
+- **UIScope:** Gera toda a tipagem necessária para os Scopes do Fusion (que são modificados pelo **Client Core**

@@ -1,8 +1,8 @@
 # Stores
 
-Utilizada geralmente no `Client`, mas compátivel com o `Server`, onde possuem o propósito de armazenar `States` (ou estados) globais e fornecer uma API para operar sobre eles.
+Utilizada geralmente com `UIControllers`, mas compátivel com os `Controllers` normais, onde possuem o propósito de armazenar `States` (ou estados) globais e fornecer uma API para operar sobre eles.
 
-> **💡 Dica:** Stores fazem parte da UI Framework, e são controladas por [UIControllers](https://github.com/Layre-Org/layre-organization/blob/main/Docs/Controllers.md#exclusividade-de-uicontrollers) ou até mesmo [UIComponents](https://github.com/Layre-Org/layre-organization/blob/main/Docs/Components.md#o-que-são-uicomponents).
+> **💡 Dica:** Stores fazem parte da UI Framework, e são consumidas pelos [UIControllers](https://github.com/Layre-Org/layre-organization/blob/main/Docs/Controllers.md#exclusividade-de-uicontrollers) ou até mesmo [UIComponents](https://github.com/Layre-Org/layre-organization/blob/main/Docs/Components.md#o-que-são-uicomponents).
 
 ## Sintaxe Base para Stores
 
@@ -17,7 +17,7 @@ local ExampleStore = {} :: IExampleStore
 -- ...
 ```
 
-Veja que **sempre** haverá uma definição de tipos no cabeçalho de qualquer Store. Sempre que um novo valor seja adicionado para esta Store operar, **você deve especificá-lo na declaração de tipos**.
+Veja que **sempre** haverá uma definição de tipos no cabeçalho de qualquer Store. Sempre que um novo valor seja adicionado para esta Store operar, **você deve especificá-lo na declaração de tipos**, pois ele é usado na geração do type `UIScope.IScope`
 
 ### Exemplo de Store utilizado no Ocean Diving:
 
@@ -34,7 +34,7 @@ export type IPlayerStore = {
 
 local PlayerStore = {} :: IPlayerStore
 
-function PlayerStore:Start(Scope: UIScope.Scope)
+function PlayerStore:Start(Scope: UIScope.IScope)
     self.Scope = Scope
 
     self.Health = Scope:AttributeValue('Health')
@@ -59,12 +59,11 @@ Mais tarde, quando quiser acessar uma Store, basta acessar o `Scope.Stores` ou d
 local UIController = {}
 
 function UIController:Start(Scope: UIScope.Scope)
-    local HealthLabel = Scope.Paths.UI.HealthLabel
+    local HealthLabel = Scope.Paths.UI.HealthLabel:await()
 
-    local PlayerStore = Scope.Stores.UI
-    PlayerStore:SetHealth(2)
+    local PlayerStore = Scope.Stores.Player
 
-    Scope:StatLabel() {
+    Scope:NumericLabel() {
         Label = HealthLabel;
         Value = PlayerStore.Health;
         MaxValue = PlayerStore.MaxHealth;
