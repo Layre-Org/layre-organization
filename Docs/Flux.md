@@ -101,18 +101,17 @@ disconnect()
 
 ---
 
-### Unreliable
+### State (Unreliable)
 
 Enviado via `UnreliableRemoteEvent`. Os dados podem ser **perdidos ou chegar fora de ordem**. Use para dados de alta frequência onde perder um frame não importa, como posição ou rotação.
 
 ```lua
-SyncPosition = Flux.definePacket({
+SyncPosition = Flux.defineState({
     value = Flux.struct({
         x = Flux.float32,
         y = Flux.float32,
         z = Flux.float32,
     }),
-    reliabilityType = 'unreliable'
 })
 ```
 
