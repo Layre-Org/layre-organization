@@ -24,7 +24,11 @@ Você até pode usar e instalar manualmente os `.rbxm` disponibilizados, mas fic
 5. Abra o Explorador de Arquivos, vá na barra de diretórios e cole o comando: `%LOCALAPPDATA%\Roblox\Plugins`.
 6. Mova o `.rbxmx` para esta pasta e re-abra seu Roblox Studio -> Verifique na aba de Plugins.
 
-> ✅ Seu plugin foi instalado e você já pode iniciar seu novo projeto
+> ✅ Seu plugin foi instalado.
+
+> **IMPORTANTE:**
+> Para que o botão `Setup` do plugin funcione corretamente, você deve obter o modelo na Creator Store pelo [link oficial](https://create.roblox.com/store/asset/137596272908059/Framework).
+> O botão de `Sistemas` ainda está em teste. Mais informações serão dadas no futuro.
 
 ---
 
