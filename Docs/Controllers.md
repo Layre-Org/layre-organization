@@ -71,6 +71,7 @@ O **Client Core** cria conexões de eventos para os Players e para o `LocalPlaye
 - `Controller:OnPlayerAdded(Player)` -> Executado quando um Player entra no jogo.
 - `Controller:OnPlayerRemoving(Player)` -> Executado quando um Player sai do jogo.
 - `Controller:OnCharacterAdded(Player, Character)` -> Executado quando o `LocalCharacter` é spawnado, **ou seja: quando entrar e após cada respawn**.
+- `Controller:OnAnyCharacterAdded(Player, Character)` -> Em contrapartida ao `OnCharacterAdded`, executa ao qualquer Character entrar/respawnar.
 - `Controller:OnCharacterAppearenceLoaded(Player, Character)` -> Executado quando a aparência do `LocalCharacter` é carregada.
 - `Controller:OnPlayerDied(Player)` -> Executado quando o `LocalCharacter` morre.
 

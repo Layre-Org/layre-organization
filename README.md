@@ -50,6 +50,7 @@ Você até pode usar e instalar manualmente os `.rbxm` disponibilizados, mas fic
 
 -   [Flux](https://github.com/Layre-Org/layre-organization/blob/main/Docs/Flux.md) (Fortemente baseado em [ByteNet](https://ffrostfall.github.io/ByteNet/), mantido por [@Gui97p](https://github.com/Gui97p))
 -   LuaO (desenvolvido por [@Gui97p](https://github.com/Gui97p) e [@YureAnjos](https://github.com/YureAnjos))
+-   Debounce (desenvolvido por [@Gui97p](https://github.com/Gui97p))
 -   Data Structures (desenvolvido por [@Gui97p](https://github.com/Gui97p))
 -   [Super](https://github.com/Layre-Org/layre-organization/blob/main/Docs/Classes.md#herança-com-a-lib-super) (desenvolvido por [@Gui97p](https://github.com/Gui97p))
 -   [Janitor](https://howmanysmall.github.io/Janitor/)
@@ -66,6 +67,13 @@ Os Services são módulos do servidor que encapsulam sistemas reutilizáveis do 
 -   [PlayersService](https://github.com/Layre-Org/layre-organization/blob/main/Docs/Services/PlayersService.md) — Sistema de saúde customizado e rastreamento de amigos online
 -   [MarketplaceService](https://github.com/Layre-Org/layre-organization/blob/main/Docs/Services/MarketplaceService.md) — Gamepasses e developer products com processamento seguro de compras
 -   [OrderedDataService](https://github.com/Layre-Org/layre-organization/blob/main/Docs/Services/OrderedDataService.md) — Rankings e leaderboards via OrderedDataStore
+
+### Services (Client)
+
+O Client também possui alguns Services em seu lado, realizando uma parte importante em processos repetitivos.
+
+- AnimationsService — Preload e caching de animações, com uma api para controle de fluxo
+- PlayersService — Versão client-side do serviço de players, com funções próprias
 
 ### Configuração do Projeto
 
@@ -87,7 +95,7 @@ Configurações globais acessíveis em **servidor e cliente**:
 Constants.LIFE_CYCLE_PHASES = {
     SETUP, START, AWAKE,
     ON_PLAYER_ADDED, ON_PLAYER_REMOVING,
-    ON_CHARACTER_ADDED, ON_CHARACTER_APPEARANCE_LOADED,
+    ON_CHARACTER_ADDED, ON_ANY_CHARACTER_ADDED, ON_CHARACTER_APPEARANCE_LOADED,
     ON_PLAYER_DIED
 }
 

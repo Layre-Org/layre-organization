@@ -23,7 +23,6 @@
   - [AddModifier](#addmodifier)
   - [RemoveModifier](#removemodifier)
   - [GetModifiers](#getmodifiers)
-  - [ignoreModifiers](#ignoremodifiers)
 - [Infinite Currency](#infinite-currency)
 - [Constantes relacionadas](#constantes-relacionadas)
 
@@ -124,20 +123,13 @@ Métodos genéricos para qualquer atributo — não apenas moedas.
 Incrementa um atributo pelo valor informado. Modifiers registrados para esse atributo são aplicados automaticamente sobre o `Amount` antes da operação.
 
 ```lua
-StatsService:Add(Client: Player, Attribute: string, Amount: T): { save: () -> (), get: () -> any, ignoreModifiers: (...string) -> self }
+StatsService:Add(Client: Player, Attribute: string, Amount: T): { save: () -> (), get: () -> any }
 ```
 
 ```lua
 -- Adiciona 1 kill e salva
 StatsService:Add(player, "Kills", 1).save()
-
--- Adiciona XP sem aplicar o modifier "VipBonus"
-StatsService:Add(player, "XP", 100)
-    .ignoreModifiers("VipBonus")
-    .save()
 ```
-
-> **💡 Dica:** O atributo é atualizado via `task.defer` — ou seja, a mudança acontece no próximo frame. O `.save()` persiste o valor calculado com os modifiers aplicados.
 
 ---
 
@@ -175,7 +167,7 @@ local level = StatsService:Get(player, "Level")
 
 ### Wipe
 
-Reseta um ou mais atributos para os valores padrão do `Template`. Retorna um objeto com `.save()` para persistir o reset.
+Reseta um ou mais atributos para os valores padrão do `Template` ou `Attribute Map` (Caso não tenha o valor no template). Retorna um objeto com `.save()` para persistir o reset.
 
 ```lua
 StatsService:Wipe(Client: Player, Fields: string | { string }): { save: () -> () }
@@ -243,33 +235,6 @@ StatsService:GetModifiers(Attribute: string): {{Name: string, Execute: () -> ()}
 
 ```lua
 local modifiers = StatsService:GetModifiers("XP")
-```
-
----
-
-### ignoreModifiers
-
-Disponível no objeto retornado por `Add`. Permite excluir modifiers específicos da operação atual pelo nome.
-
-```lua
-object.ignoreModifiers(...modifierNames: string): self
-```
-
-```lua
--- Ignora todos os modifiers
-StatsService:Add(player, "XP", 100)
-    .ignoreModifiers()
-    .save()
-
--- Aplica todos os modifiers exceto o "VipBonus"
-StatsService:Add(player, "XP", 100)
-    .ignoreModifiers("VipBonus")
-    .save()
-
--- Ignora múltiplos modifiers
-StatsService:Add(player, "XP", 100)
-    .ignoreModifiers("VipBonus", "EventBonus")
-    .save()
 ```
 
 ---

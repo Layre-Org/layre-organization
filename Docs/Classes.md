@@ -25,10 +25,10 @@ Este `export type` consegue aplicar todos os `:Methods()` da Classe e auxilia na
 Na pasta `Shared/Utility` em `ReplicatedStorage` é possível encontrar um Module denominado `Super`, ele quem torna possível a herança no LuaU. Para que funcione corretamente, ela deve ser chamada na definição do self na classe filha, do seguinte modo:
 
 ```lua
-local self = Super(ClassePai, ClasseFilha)
+local self = Super(ClassePai, ClasseFilha).init()
 ```
 
-Caso queira inicializar os valores da **classe pai** _(se ela receber um nome durante o `.new()`, por exemplo)_, pode ser utilizado a função `.init()`:
+Para inicializar os valores da **classe pai** _(se ela receber um nome durante o `.new()`, por exemplo)_, Devem ser passados na função `init()` (A função init é obrigatória para a hierarquia funcionar):
 
 ```lua
 local self = Super(ClassePai, ClasseFilha).init(param1, param2)
@@ -77,7 +77,7 @@ function Dog.GetRace(self: IDog)
     return self.Race
 end
 
-export type IDog = PetClass.IPet | typeof(setmetatable({} :: {
+export type IDog = PetClass.IPet & typeof(setmetatable({} :: {
     Race: string,
 }, Dog))
 ```

@@ -185,6 +185,9 @@ type Settings = {
         maxPackets: number,  -- Máximo de packets por janela
     }?,
     timeout: number?,        -- Segundos antes do invoke rejeitar (Function apenas) - Default: 3
+    logs: {
+        notFound: boolean,   -- Ativa/Desativa o warn de listener not found - Default: true
+    }
 }
 ```
 
@@ -227,6 +230,7 @@ O Flux expõe um conjunto de tipos primitivos para descrever o formato dos dados
 | `Flux.optional(type)` | Valor que pode ser `nil` |
 | `Flux.inst` | Referência a uma `Instance` do Roblox |
 | `Flux.union(type1, type2)` | Valor que pode ser do tipo `type1` ou `type2` |
+| `Flux.enum(...string)` | Lista de valores que a data enviada deve obrigatoriamente estar contida no conjunto |
 | `Flux.nothing` | É obrigatóriamente `nil` |
 | `Flux.unknown` | Usado quando não se sabe o valor que vem, porém perdendo a compressão em buffer |
 | `Flux.vec(2\|3)` | Vetores de 2 ou 3 dimensões |

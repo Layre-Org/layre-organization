@@ -53,24 +53,34 @@ Com esta base, conseguimos especificar na função `.new()` qual a Tag que prete
 O código à seguir gerencia um `ProximityPrompt` dentro de uma **BillboardGui** quando a Tag `PickupPrompt` é adicionada à ela. O método `:Construct()` é chamado quando a tag for adicionada, e é possível acessar a própria **BillboardGui** com `self.Instance`:
 
 ```lua
+local Client = Players.LocalPlayer
+
 local PickupPrompt = Component.new({
     Tag = 'PickupPrompt'
 })
 
-function PickupPrompt:Construct()
+function PickupPrompt.Construct(self: IComponent)
     local Prompt: ProximityPrompt = self.Instance
 
     if Client.Gamepass:GetAttribute('Magnet') then
         Prompt.MaxActivationDistance *= 1.5
     end
+end
 
-    Prompt.PromptShown:Connect(function()
+function PickupPrompt.Start(self: IComponent)
+	Prompt.PromptShown:Connect(function()
         self.Instance.Enabled = true
     end)
     Prompt.PromptHidden:Connect(function()
         self.Instance.Enabled = false
     end)
 end
+
+type IComponent = {
+	Instance: ProximityPrompt
+} & typeof(Test)
+
+return PickupPrompt
 ```
 
 ## O que são UIComponents
