@@ -33,6 +33,8 @@ O nome do atributo é definido por `AttributeName` nas constantes — se não de
 
 Para executar lógica customizada quando um player possui ou compra um gamepass, use `GamepassHook`.
 
+> **⚠️ Importante:** Caso queira testar um product ou uma gamepass sem fazer código de prompts, o framework cria uma pasta (Studio Only) Marketplace no Player que caso você ative um atributo de suas subpastas, o prompt aparecerá. Os atributos das subpastas serão setados a partir dos modules de `Product` e `Gamepass` no Core.
+
 ### HasGamepass
 
 Retorna `true` se o player possuir a gamepass com o id especificado
