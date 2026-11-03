@@ -28,7 +28,7 @@ Você até pode usar e instalar manualmente os `.rbxm` disponibilizados, mas fic
 
 > **IMPORTANTE:**
 > Para que o botão `Setup` do plugin funcione corretamente, você deve obter o modelo na Creator Store pelo [link oficial](https://create.roblox.com/store/asset/137596272908059/Framework).
-> O botão de `Sistemas` ainda está em teste. Mais informações serão dadas no futuro.
+> O botão de `Systems` injeta sistemas prontos, como o UI Template. Veja [Systems](https://github.com/Layre-Org/layre-organization/blob/main/Docs/Systems.md).
 
 ---
 
@@ -37,6 +37,7 @@ Você até pode usar e instalar manualmente os `.rbxm` disponibilizados, mas fic
 ### Plugin
 
 -   [Como usar o Plugin](https://github.com/Layre-Org/layre-organization/blob/main/Docs/Plugin.md)
+-   [Systems: injetar e publicar sistemas](https://github.com/Layre-Org/layre-organization/blob/main/Docs/Systems.md)
 
 ### Padrões de Projeto
 
