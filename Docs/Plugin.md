@@ -16,7 +16,7 @@ Para utilizar o Framework, você precisa obrigatoriamente usar o plugin. É ele 
 Ambas as funcionalidades aparecem na aba de Plugins do Roblox Studio
 
 - **Setup:** Inicializa a estrutura de pastas mais recente do framework.
-- **Systems:** Mostra uma lista de sistemas oficiais que pode ser injetado no seu jogo.
+- **Systems:** Mostra uma lista de sistemas oficiais que pode ser injetado no seu jogo. Você escolhe as features, confere conflitos e pendências e injeta. Veja como injetar e como publicar um sistema em [Systems](https://github.com/Layre-Org/layre-organization/blob/main/Docs/Systems.md).
 
 ## Lista de Comandos (Command Bar)
 

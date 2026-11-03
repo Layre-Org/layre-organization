@@ -5,5 +5,12 @@
         "description": "Sistema de teste",
         "version": "1.0.0",
         "assetId": 92547550225956
+    },
+    {
+        "id": "ui-template",
+        "name": "UI Template",
+        "description": "HUD, Loja, Prompt e features opcionais (Studs UI Template 2026)",
+        "version": "1.0",
+        "assetId": 105880943006715
     }
 ]
